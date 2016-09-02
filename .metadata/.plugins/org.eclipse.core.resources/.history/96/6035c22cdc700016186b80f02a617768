@@ -1,0 +1,54 @@
+package com.selenium.project.SeleniumDemo;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+//import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class RodanFieldTest {
+
+
+	@Test
+	public void t1() throws Exception{
+
+		//launch the firefox
+		WebDriver driver= new FirefoxDriver();
+
+		// maximize the browser
+		driver.manage().window().maximize();
+
+		// setting timeout for implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//call URL in get method
+		driver.get("https://www.rodanandfields.com/ca/");
+		
+		//verifying URL
+	    Assert.assertEquals(driver.getCurrentUrl(), "https://www.rodanandfields.com/ca/");
+	    
+	    driver.findElement(By.xpath("//*[contains(text(),'SHOP SKINCARE')]")).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[contains(text(),'All Products')]")).click();
+	    
+	    Assert.assertTrue(driver.getCurrentUrl().equalsIgnoreCase("https://www.rodanandfields.com/ca/quick-shop/quickShop"),"we have not navigated to the desired site!!");
+
+	  /*  Thread.sleep(2000);
+	    driver.findElement(By.xpath("//input[@id='refine-products-button']")).click();
+	    driver.findElement(By.xpath("//input[@id='refine-products-button']")).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(By.xpath("//input[@id='refine-products-button']")).sendKeys(Keys.ENTER);*/
+        
+
+        Select sel = new Select(driver.findElement(By.className("refine-products select-dropdown open")));
+        sel.selectByValue("REDEFINE");
+	    
+	    
+	    
+	}
+
+
+}

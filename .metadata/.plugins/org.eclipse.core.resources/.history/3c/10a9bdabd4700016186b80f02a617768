@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RodanFieldSuite">
+<tests>
+<test name="RodanFieldTest">
+<classes>
+<class name="com.selenium.project.seleniumDemo.SeleniumEx">
+</class>
+</classes>
+</test>
+</tests>
+</suite>

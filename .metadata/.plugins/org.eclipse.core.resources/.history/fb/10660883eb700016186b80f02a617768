@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RodanFieldSuiteName"  thread-count="2" parallel="tests" >
+<tests>
+<test name="RodanFieldTestName">
+<classes>
+<class name="com.selenium.project.SeleniumDemo.RodanFieldTest">
+</class>
+</classes>
+</test>
+</tests>
+</suite>
